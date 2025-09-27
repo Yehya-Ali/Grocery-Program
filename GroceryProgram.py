@@ -15,6 +15,10 @@ while fruit != "done":
     
     quantity = int(input("How many do you want?"))
 
+    if fruit == "milk" and quantity > 2:
+
+        price -=1
+
     if fruit in groceries:
 
         price += groceries[fruit] * quantity
@@ -22,6 +26,7 @@ while fruit != "done":
         cart[fruit] = quantity
 
     else:
+
         print("Sorry, we don't have that item.")
 
 print(f"You bought: {cart}")

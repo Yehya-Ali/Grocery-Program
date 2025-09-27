@@ -2,7 +2,7 @@ groceries = {"apple":2, "banana":1, "milk":3, "bread":2}
 
 fruit = ""
 
-cart = []
+cart = {}
 
 price = 0
 
@@ -15,20 +15,14 @@ while fruit != "done":
     
     quantity = int(input("How many do you want?"))
 
-    for i in range(quantity):
+    if fruit in groceries:
 
-        print(i)
-
-        if fruit in groceries:
-            cart.append(fruit)
-            i-=1
+        price += groceries[fruit] * quantity
         
-        else:
-            print("Sorry, we don't have that item.")
+        cart[fruit] = quantity
 
-for i in cart:
-    if i in groceries:
-        price += groceries[i]
+    else:
+        print("Sorry, we don't have that item.")
 
 print(f"You bought: {cart}")
 print(f"Total: ${price}")

@@ -1,29 +1,29 @@
 groceries = {"apple":2, "banana":1, "milk":3, "bread":2}
 
-fruit = ""
+item = ""
 
 cart = {}
 
 price = 0
 
-while fruit != "done":
+while item != "done":
 
-    fruit = input("What do you want to buy?")
+    item = input("What do you want to buy?")
 
-    if fruit == "done":
+    if item == "done":
         break
+
+    if item in groceries:
     
-    quantity = int(input("How many do you want?"))
+        quantity = int(input("How many do you want?"))
 
-    if fruit == "milk" and quantity > 2:
+        cart[item] = quantity
 
-        price -=1
+        price += (groceries[item] * cart[item])
 
-    if fruit in groceries:
+        if item == "milk" and quantity > 2:
 
-        price += groceries[fruit] * quantity
-        
-        cart[fruit] = quantity
+            price -=1
 
     else:
 
